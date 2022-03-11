@@ -29,15 +29,15 @@ public class UserResourceController {
 	}
 	
 	@PostMapping(path="/users")
-	public void createUser(@RequestBody User user) {
+	public ResponseEntity<Object> createUser(@RequestBody User user) {
 		User createdUser = userDaoService.saveUser(user);
 		
-//		URI location = ServletUriComponentsBuilder
-//				.fromCurrentRequest()
-//				.path("/{id}")
-//				.buildAndExpand(createdUser.getId())
-//				.toUri();
-//		
-//		return ResponseEntity.created(location).build();
+		URI location = ServletUriComponentsBuilder
+				.fromCurrentRequest()
+				.path("/{id}")
+				.buildAndExpand(createdUser.getId())
+				.toUri();
+		
+		return ResponseEntity.created(location).build();
 	}
 }
