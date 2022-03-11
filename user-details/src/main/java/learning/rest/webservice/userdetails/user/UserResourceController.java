@@ -25,7 +25,9 @@ public class UserResourceController {
 	
 	@GetMapping(path="/users/{id}")
 	public User retrieveUser(@PathVariable Integer id) {
-		return userDaoService.findUser(id);
+		User user = userDaoService.findUser(id);
+		if (user == null) throw new UserNotFoundException("id="+id);
+		return user;
 	}
 	
 	@PostMapping(path="/users")
