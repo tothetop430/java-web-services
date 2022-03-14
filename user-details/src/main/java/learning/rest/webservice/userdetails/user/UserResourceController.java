@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+//import org.springframework.hateoas.EntityModel;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -30,6 +32,7 @@ public class UserResourceController {
 	public User retrieveUser(@PathVariable Integer id) {
 		User user = userDaoService.findUser(id);
 		if (user == null) throw new UserNotFoundException("id="+id);
+		
 		return user;
 	}
 	
