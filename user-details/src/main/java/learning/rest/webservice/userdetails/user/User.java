@@ -5,11 +5,13 @@ import java.util.Date;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class User {
 	
+	@Autowired
 	private Integer id;
 	
 	@Size(min=2, message="Name should be atleast 2 characters long.")
