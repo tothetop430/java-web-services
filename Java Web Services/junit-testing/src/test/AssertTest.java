@@ -13,6 +13,9 @@ public class AssertTest {
     @Test
     public void test2() {
         assertTrue(true);
+        // assertFalse
+        // assertNull
+        // assertNotNull
     }
 
     @Test
