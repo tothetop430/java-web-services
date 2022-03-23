@@ -1,6 +1,7 @@
 package learning.springaop.aop.aspect;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.slf4j.Logger;
@@ -17,6 +18,12 @@ public class UserAuth {
 	public void userAuthorization(JoinPoint joinPoint) {
 		logger.info("Checking user authorization...");
 		logger.info("User allowed to access {}", joinPoint);
+	}
+	
+	@After("execution(* learning.springaop.aop.business.*.*(..))")
+	public void userAuthAfter(JoinPoint joinPoint) {
+		logger.info("Logging User out...");
+		logger.info("Closing the method call {}", joinPoint);
 	}
 	
 }
