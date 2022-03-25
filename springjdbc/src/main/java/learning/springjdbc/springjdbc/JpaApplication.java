@@ -1,5 +1,6 @@
 package learning.springjdbc.springjdbc;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 import org.slf4j.Logger;
@@ -9,6 +10,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import learning.springjdbc.springjdbc.entity.PersonTable;
 import learning.springjdbc.springjdbc.jdbc.JpaRepositoryDao;
 
 
@@ -26,6 +28,7 @@ public class JpaApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-//		logger.info("Person By Id" + jpaDao.findById(10001));
+		logger.info("Insert Person 1" + jpaDao.updateOrInsert(new PersonTable("Sid", "Gzb", new Date())));
+		logger.info("Person By Id" + jpaDao.findById(1));
 	}
 }
