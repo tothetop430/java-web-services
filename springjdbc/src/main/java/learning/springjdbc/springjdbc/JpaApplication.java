@@ -29,6 +29,8 @@ public class JpaApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		logger.info("Insert Person 1" + jpaDao.updateOrInsert(new PersonTable("Sid", "Gzb", new Date())));
+		logger.info("Insert Person 2" + jpaDao.updateOrInsert(new PersonTable("Abhi", "Gzb", new Date())));
 		logger.info("Person By Id" + jpaDao.findById(1));
+		logger.info("Deleting Person with Id 2" + jpaDao.deleteById(2));
 	}
 }

@@ -23,4 +23,10 @@ public class JpaRepositoryDao {
 		return entityManager.merge(person);
 	}
 	
+	public PersonTable deleteById(int id) {
+		PersonTable person = findById(id);
+		entityManager.remove(person);
+		return person;
+	}
+	
 }
