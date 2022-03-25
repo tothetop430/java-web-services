@@ -62,7 +62,7 @@ public class PersonTable {
 	}
 	@Override
 	public String toString() {
-		return "\nPerson [id=" + id + ", name=" + name + ", location=" + location + ", birthDate=" + birthDate + "]";
+		return "\nPersonTable [id=" + id + ", name=" + name + ", location=" + location + ", birthDate=" + birthDate + "]";
 	}
  
 
